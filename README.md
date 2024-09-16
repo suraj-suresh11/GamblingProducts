@@ -41,4 +41,4 @@ Each criterion scores 0-3 depending on level of quality and compliance.
 *Desirable Criteria*
 
 1. Code conforms to recognisable best practice such as consistent use of casing and naming conventions.
-2. Modern, accessible UI/UX.
+2. Modern, accessible UI/UX using GOV.UK Design System.
