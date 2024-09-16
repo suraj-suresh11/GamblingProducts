@@ -26,6 +26,7 @@ Your solution should be built according to SOLID principles - you are free to au
 ## Useful links
 
 - Downloads for [Visual Studio/VS Code](https://visualstudio.microsoft.com/downloads/).
+- Design your service using [GOV.UK styles, components and patterns](https://design-system.service.gov.uk/).
 
 ## Scoring
 
