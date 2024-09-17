@@ -9,7 +9,7 @@ The following technical assessment will help us to understand your suitability f
 
 Create an [ASP.NET](https://dotnet.microsoft.com/en-us/download/dotnet) application using the latest version of .NET
 
-Using the project templates and the sample data provided in the solution, create a simple web application to manage gambling licensee records. 
+Using the project templates and the sample data provided in the [solution](https://dev.azure.com/ukgc-assessment/_git/Licensee%20Records), create a simple web application to manage gambling licensee records. 
 
 The solution includes ‘**Accounts.json**’ and ‘**Products.json**’ sample data on which to implement a backend and frontend. Persist changes to the JSON files only - avoid using a database for your solution. 
 
