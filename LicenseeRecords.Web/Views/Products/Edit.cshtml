@@ -1,0 +1,39 @@
+@model LicenseeRecords.Web.Models.ProductLicence
+
+@{
+    ViewData["Title"] = "Edit Licensed Product";
+    var accountId = ViewBag.AccountId;
+    var availableProducts = ViewBag.AvailableProducts as List<LicenseeRecords.Web.Models.Product>;
+}
+
+<h1 class="govuk-heading-l">Edit Product</h1>
+
+<form asp-action="EditProduct" method="post">
+    <input type="hidden" name="accountId" value="@accountId" />
+    <input type="hidden" asp-for="LicenceId" />
+
+    <div class="govuk-form-group">
+        <label for="ProductId" class="govuk-label">Select Product</label>
+        <select asp-for="Product.ProductId" class="govuk-select" asp-items="@(new SelectList(availableProducts, "ProductId", "ProductName"))"></select>
+    </div>
+
+    <div class="govuk-form-group">
+        <label for="LicenceStatus" class="govuk-label">Licence Status</label>
+        <select asp-for="LicenceStatus" class="govuk-select">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select>
+    </div>
+
+    <div class="govuk-form-group">
+        <label for="LicenceFromDate" class="govuk-label">From Date</label>
+        <input asp-for="LicenceFromDate" class="govuk-input" type="date" />
+    </div>
+
+    <div class="govuk-form-group">
+        <label for="LicenceToDate" class="govuk-label">To Date</label>
+        <input asp-for="LicenceToDate" class="govuk-input" type="date" />
+    </div>
+
+    <button type="submit" class="govuk-button">Update Product</button>
+</form>

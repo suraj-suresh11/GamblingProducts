@@ -1,0 +1,35 @@
+@model LicenseeRecords.Web.Models.Account
+@{
+    ViewData["Title"] = "Add Licensee Account";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Licensee Records</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.3.1/govuk/all.css">
+</head>
+<body>
+    <main class="govuk-main-wrapper govuk-width-container">
+        <h1 class="govuk-heading-xl">Add Licensee Account</h1>
+        <form method="post" class="govuk-form-group">
+            <label for="AccountName" class="govuk-label">Account Name</label>
+            <input asp-for="AccountName" class="govuk-input govuk-!-width-two-thirds" />
+            <span asp-validation-for="AccountName" class="govuk-error-message"></span>
+
+            <label for="LicenseNumber" class="govuk-label">License Number</label>
+            <input asp-for="LicenseNumber" class="govuk-input govuk-!-width-two-thirds" />
+            <span asp-validation-for="LicenseNumber" class="govuk-error-message"></span>
+
+            <label for="AccountStatus" class="govuk-label">Status</label>
+            <select asp-for="AccountStatus" class="govuk-select govuk-!-width-two-thirds">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+            <span asp-validation-for="AccountStatus" class="govuk-error-message"></span>
+
+            <button type="submit" class="govuk-button">Save</button>
+        </form>
+    </main>
+</body>
+</html>

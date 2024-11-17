@@ -1,0 +1,25 @@
+@model IEnumerable<LicenseeRecords.Web.Models.ProductLicence>
+
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Licence ID</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Product Name</th>
+            <th scope="col" class="govuk-table__header">From</th>
+            <th scope="col" class="govuk-table__header">To</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        @foreach (var licence in Model)
+        {
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">@licence.LicenceId</td>
+                <td class="govuk-table__cell">@licence.LicenceStatus</td>
+                <td class="govuk-table__cell">@licence.Product?.ProductName</td>
+                <td class="govuk-table__cell">@licence.LicenceFromDate.ToShortDateString()</td>
+                <td class="govuk-table__cell">@licence.LicenceToDate?.ToShortDateString() ?? "N/A"</td>
+            </tr>
+        }
+    </tbody>
+</table>

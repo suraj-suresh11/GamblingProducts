@@ -1,0 +1,43 @@
+@model IEnumerable<LicenseeRecords.Web.Models.Account>
+@{
+    ViewData["Title"] = "Licensee Accounts";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Licensee Records</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/govuk-frontend@4.3.1/govuk/all.css">
+</head>
+<body class="govuk-template__body">
+    <main class="govuk-main-wrapper govuk-width-container" id="main-content" role="main">
+        <h1 class="govuk-heading-xl">Licensee Accounts</h1>
+        <a href="/Accounts/Add" class="govuk-button govuk-button--secondary">Add Account</a>
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header">Account Name</th>
+                    <th class="govuk-table__header">License Number</th>
+                    <th class="govuk-table__header">Status</th>
+                    <th class="govuk-table__header">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                @foreach (var account in Model)
+                {
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">@account.AccountName</td>
+                        <td class="govuk-table__cell">@account.LicenseNumber</td>
+                        <td class="govuk-table__cell">@account.AccountStatus</td>
+                        <td class="govuk-table__cell">
+                            <a href="/Accounts/Edit/@account.AccountId" class="govuk-link">Edit</a> |
+                            <a href="/Accounts/Delete/@account.AccountId" class="govuk-link govuk-link--danger"
+                               onclick="return confirm('Are you sure you want to delete this account?');">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

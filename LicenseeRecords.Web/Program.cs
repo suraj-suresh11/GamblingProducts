@@ -1,7 +1,16 @@
+using LicenseeRecords.Web.Models;
+using LicenseeRecords.Web.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register JSON data services for Account and Product
+builder.Services.AddSingleton<IJsonDataService<Account>>(provider =>
+    new JsonDataService<Account>("/Users/surajsuresh/Desktop/Licensee Records/Data/Accounts.json"));
+builder.Services.AddSingleton<IJsonDataService<Product>>(provider =>
+    new JsonDataService<Product>("/Users/surajsuresh/Desktop/Licensee Records/Data/Products.json"));
 
 var app = builder.Build();
 
@@ -9,7 +18,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -18,10 +26,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Accounts}/{action=Index}/{id?}");
 
 app.Run();

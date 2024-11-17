@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="~/images/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon-16x16.png">  
         
+    <!-- GOV.UK Design System Stylesheet -->
     <link rel="stylesheet" type="text/css" href="~/css/govuk-frontend-5.6.0.min.css" />
     <link rel="stylesheet" type="text/css" href="~/css/licensee.records.css" />
 </head>
@@ -19,39 +20,35 @@
 
     <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
+    <!-- Skip Link -->
     <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">
         Skip to main content
     </a>
 
-    <!-- header -->
+    <!-- Header -->
     <header class="govuk-header" data-module="govuk-header">
         <div class="govuk-header__container govuk-width-container">
             <div class="govuk-header__logo">
                 <a href="/" class="govuk-header__link govuk-header__link--homepage govuk-!-static-padding-top-2">
-                    
                     <img src="~/images/logo.png"
-                        alt="Gambling Commission" 
-                        width="200px"
-                        class="govuk-header__logotype govuk-image-fluid"
-                        aria-label="Gambling Commission" />                    
+                         alt="Gambling Commission" 
+                         width="200px"
+                         class="govuk-header__logotype govuk-image-fluid"
+                         aria-label="Gambling Commission" />                    
                 </a>
             </div>
-
-            <!-- service name and navigation -->
             <div class="govuk-header__content">
                 <a href="#" class="govuk-header__link govuk-header__service-name">
                     Licensee Records
                 </a>                
             </div>
-
         </div>
-
     </header>
 
-    <!-- main -->
+    <!-- Main Content -->
     <div class="govuk-width-container">
 
-        <!-- phase banner and back link -->
+        <!-- Phase Banner -->
         <div class="govuk-phase-banner">
             <p class="govuk-phase-banner__content">
                 <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -63,15 +60,13 @@
             </p>
         </div>        
 
-        <!-- main cntent -->
+        <!-- Main Content -->
         <main class="govuk-main-wrapper" id="main-content">
-
             @RenderBody()
-
         </main>
     </div>
 
-    <!-- footer -->
+    <!-- Footer -->
     <footer class="govuk-footer">
         <div class="govuk-width-container">
             <div class="govuk-footer__meta">
